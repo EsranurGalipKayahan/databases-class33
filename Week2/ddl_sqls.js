@@ -2,11 +2,11 @@ export const create_author_table = () => {
   const CREATE_AUTHOR_TABLE = `
       CREATE TABLE IF NOT EXISTS authors (
         author_no INT PRIMARY KEY,
-        author_name VARCHAR(50),
-        university VARCHAR(50),
+        author_name VARCHAR(50) NOT NULL,
+        university VARCHAR(50) NOT NULL,
         date_of_birth DATE,
         h_index INT,
-        gender ENUM('m', 'f')
+        gender ENUM('m', 'f') NOT NULL
       );`;
   return CREATE_AUTHOR_TABLE;
 };
@@ -19,7 +19,7 @@ export const create_research_papers_table = () => {
   const CREATE_RESEARCH_PAPERS_TABLE = `
       CREATE TABLE IF NOT EXISTS research_papers (
         paper_id INT PRIMARY KEY,
-        paper_title VARCHAR(50),
+        paper_title VARCHAR(50) NOT NULL,
         conference VARCHAR(50),
         publish_date DATE);`;
   return CREATE_RESEARCH_PAPERS_TABLE;
